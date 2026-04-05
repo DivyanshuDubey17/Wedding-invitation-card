@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Wedding RSVPs — public create only, no client reads.
+    // Paste this whole file into Firebase Console → Firestore Database → Rules → Publish.
+    match /rsvps/{rsvpId} {
+      allow read: if false;
+
+      // guestCount: SDK may send int or whole-number float — accept both
+      allow create: if request.resource.data.fullName is string
+        && request.resource.data.fullName.size() > 0
+        && request.resource.data.fullName.size() < 300
+        && request.resource.data.phone is string
+        && request.resource.data.phone.size() > 0
+        && request.resource.data.phone.size() <= 40
+        && request.resource.data.email is string
+        && request.resource.data.email.size() > 0
+        && request.resource.data.email.size() <= 320
+        && (request.resource.data.guestCount is int
+            || request.resource.data.guestCount is float)
+        && request.resource.data.guestCount >= 1
+        && request.resource.data.guestCount <= 20
+        && request.resource.data.events is list
+        && request.resource.data.events.size() <= 12
+        && request.resource.data.meal is string
+        && request.resource.data.meal.size() > 0
+        && request.resource.data.meal.size() <= 40
+        && request.resource.data.attendance is string
+        && request.resource.data.attendance.size() > 0
+        && request.resource.data.attendance.size() <= 20
+        && request.resource.data.message is string
+        && request.resource.data.message.size() <= 2000;
+
+      allow update, delete: if false;
+    }
+
+    // Lock everything else (optional but recommended)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
