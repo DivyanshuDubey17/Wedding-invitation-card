@@ -1,5 +1,6 @@
 import { Sparkles, Calendar, ChevronDown } from 'lucide-react'
 import { useCountdown } from '../hooks/useCountdown'
+import { weddingData } from '../data/weddingData'
 
 export default function Hero() {
   const { days, hours, minutes, seconds, pad, isPast } = useCountdown()
@@ -36,20 +37,20 @@ export default function Hero() {
         </p>
 
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-maroon leading-[1.05] mb-4">
-          <span className="block italic text-balance">Aarav</span>
+          <span className="block italic text-balance">{weddingData.couple.groomName}</span>
           <span className="block text-3xl sm:text-4xl md:text-5xl my-2 text-champagne font-normal tracking-widest">
             &amp;
           </span>
-          <span className="block italic text-balance">Siya</span>
+          <span className="block italic text-balance">{weddingData.couple.brideName}</span>
         </h1>
 
         <p className="font-display text-xl sm:text-2xl md:text-3xl text-maroon/75 italic max-w-2xl mx-auto text-balance mb-8">
-          Two hearts, one forever — celebrating love, family, and tradition in the city of nawabs.
+          {weddingData.wedding.tagline} — celebrating love, family, and tradition in {weddingData.wedding.city}.
         </p>
 
         <div className="inline-flex items-center gap-2 glass-card rounded-full px-5 py-2.5 text-maroon mb-10">
           <Calendar className="w-5 h-5 text-champagne shrink-0" />
-          <span className="font-medium tracking-wide">Friday, 12 December 2026</span>
+          <span className="font-medium tracking-wide">{weddingData.wedding.dateLabel}</span>
         </div>
 
         {/* Countdown */}

@@ -1,33 +1,7 @@
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-
-const faqs = [
-  {
-    q: 'What is the dress code?',
-    a: 'Festive Indian wear for most events — see our Dress Code section for colour guidance. For the reception, formal or cocktail Indian attire is perfect.',
-  },
-  {
-    q: 'Is parking available?',
-    a: 'Yes — complimentary parking is arranged at Heritage Lawns and Imperial Banquets. Valet will be available at select venues; signage will guide you on arrival.',
-  },
-  {
-    q: 'Are kids invited?',
-    a: 'We love your little ones! Children are welcome to the haldi, mehendi, and wedding ceremony. The sangeet and reception are adults-only after 9 PM for a relaxed evening.',
-  },
-  {
-    q: 'What time should I arrive?',
-    a: 'Please aim to arrive 20–30 minutes before the ceremony start time on the itinerary. It helps us begin on auspicious time and seat everyone comfortably.',
-  },
-  {
-    q: 'Is accommodation available?',
-    a: 'We have a small block at partner hotels in Gomti Nagar — details and booking codes will be shared via WhatsApp with confirmed guests. Early booking is recommended.',
-  },
-  {
-    q: 'Who should I contact for help?',
-    a: 'Reach out to our wedding coordinators listed in the Contact section for directions, dietary needs, or last-minute changes. We’re here to help.',
-  },
-]
+import { weddingData } from '../data/weddingData'
 
 export default function FAQ() {
   const [ref, visible] = useScrollReveal()
@@ -47,7 +21,7 @@ export default function FAQ() {
         </div>
 
         <div className="space-y-3">
-          {faqs.map((item, i) => {
+          {weddingData.faq.map((item, i) => {
             const isOpen = open === i
             return (
               <div

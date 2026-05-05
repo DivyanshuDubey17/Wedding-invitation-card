@@ -1,18 +1,7 @@
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-
-const images = [
-  { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80', alt: 'Couple moment' },
-  { src: 'https://images.unsplash.com/photo-1606800052052-a09a67037101?w=800&q=80', alt: 'Wedding details' },
-  { src: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80', alt: 'Celebration' },
-  { src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80', alt: 'Rings' },
-  { src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80', alt: 'Floral decor' },
-  { src: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80', alt: 'Pre-wedding' },
-  { src: 'https://images.unsplash.com/photo-1523438885200-e635ba2c541e?w=800&q=80', alt: 'Portrait' },
-  { src: 'https://images.unsplash.com/photo-1469379570801-2bd884ba89ba?w=800&q=80', alt: 'Venue lights' },
-  { src: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80', alt: 'Celebration lights' },
-]
+import { weddingData } from '../data/weddingData'
 
 export default function Gallery() {
   const [ref, visible] = useScrollReveal()
@@ -48,7 +37,7 @@ export default function Gallery() {
             visible ? 'opacity-100' : 'opacity-0 translate-y-8'
           }`}
         >
-          {images.map((img, i) => (
+          {weddingData.gallery.map((img, i) => (
             <button
               key={i}
               type="button"

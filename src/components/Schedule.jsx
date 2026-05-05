@@ -1,23 +1,6 @@
 import { Clock } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-
-const day1 = [
-  { time: '10:00 AM', title: 'Haldi — Bride’s side', note: 'Sharma Residence' },
-  { time: '10:30 AM', title: 'Haldi — Groom’s side', note: 'Verma Villa' },
-  { time: '4:00 PM', title: 'Mehendi welcome & high tea', note: 'Garden Pavilion' },
-  { time: '5:30 PM', title: 'Mehendi rituals & music', note: 'Garden Pavilion' },
-  { time: '7:00 PM', title: 'Sangeet — doors open', note: 'Crystal Hall' },
-  { time: '8:00 PM', title: 'Performances & dinner', note: 'Crystal Hall' },
-]
-
-const day2 = [
-  { time: '3:00 PM', title: 'Guest arrival & seating', note: 'Heritage Lawns' },
-  { time: '4:00 PM', title: 'Baraat welcome & milni', note: 'Entrance courtyard' },
-  { time: '4:45 PM', title: 'Wedding ceremony begins', note: 'Mandap' },
-  { time: '6:30 PM', title: 'Cocktails & photos', note: 'Lawn & foyer' },
-  { time: '8:30 PM', title: 'Reception & dinner', note: 'Imperial Banquets' },
-  { time: '11:00 PM', title: 'Cake, dancing & farewell', note: 'Main hall' },
-]
+import { weddingData } from '../data/weddingData'
 
 function DayColumn({ title, subtitle, slots }) {
   const [ref, visible] = useScrollReveal()
@@ -66,8 +49,16 @@ export default function Schedule() {
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-8">
-          <DayColumn title="11 December" subtitle="Haldi · Mehendi · Sangeet" slots={day1} />
-          <DayColumn title="12 December" subtitle="Wedding · Reception" slots={day2} />
+          <DayColumn
+            title={weddingData.schedule.day1Title}
+            subtitle={weddingData.schedule.day1Subtitle}
+            slots={weddingData.schedule.day1}
+          />
+          <DayColumn
+            title={weddingData.schedule.day2Title}
+            subtitle={weddingData.schedule.day2Subtitle}
+            slots={weddingData.schedule.day2}
+          />
         </div>
       </div>
     </section>

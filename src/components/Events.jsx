@@ -8,61 +8,13 @@ import {
   MapPin,
 } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { weddingData } from '../data/weddingData'
 
-const events = [
-  {
-    name: 'Engagement',
-    date: '10 December 2026',
-    time: '6:00 PM onwards',
-    venue: 'The Grand Ballroom, Taj Mahal Hotel, Lucknow',
-    desc: 'An intimate ring ceremony with close family — champagne, speeches, and the first of many dances.',
-    icon: Heart,
-  },
-  {
-    name: 'Haldi',
-    date: '11 December 2026',
-    time: '10:00 AM – 1:00 PM',
-    venue: 'Sharma Residence, Gomti Nagar, Lucknow',
-    desc: 'Turmeric, laughter, and blessings — wear something you don’t mind getting a little golden on.',
-    icon: Sun,
-  },
-  {
-    name: 'Mehendi',
-    date: '11 December 2026',
-    time: '4:00 PM – 9:00 PM',
-    venue: 'Garden Pavilion, Lebua Resort, Lucknow',
-    desc: 'Intricate henna, live folk music, and colourful festivities under the winter sky.',
-    icon: Palette,
-  },
-  {
-    name: 'Sangeet',
-    date: '11 December 2026',
-    time: '7:00 PM onwards',
-    venue: 'Crystal Hall, Renaissance Lucknow',
-    desc: 'Bollywood beats, family performances, and a night where everyone is a star on the dance floor.',
-    icon: Music,
-  },
-  {
-    name: 'Wedding Ceremony',
-    date: '12 December 2026',
-    time: '4:00 PM – 7:00 PM',
-    venue: 'Heritage Lawns, Amar Shaheed Path, Lucknow',
-    desc: 'Sacred vows, floral mandap, and timeless traditions as we tie the knot surrounded by love.',
-    icon: Flower2,
-  },
-  {
-    name: 'Reception',
-    date: '12 December 2026',
-    time: '8:30 PM onwards',
-    venue: 'Imperial Banquets, Hazratganj, Lucknow',
-    desc: 'A grand celebration with dinner, toasts, and dancing — dress your festive best.',
-    icon: Wine,
-  },
-]
+const iconMap = { Heart, Sun, Palette, Music, Flower2, Wine }
 
 function EventCard({ ev }) {
   const [ref, visible] = useScrollReveal()
-  const Icon = ev.icon
+  const Icon = iconMap[ev.icon] || Heart
 
   return (
     <article
@@ -108,7 +60,7 @@ export default function Events() {
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {events.map((ev) => (
+          {weddingData.events.map((ev) => (
             <EventCard key={ev.name} ev={ev} />
           ))}
         </div>

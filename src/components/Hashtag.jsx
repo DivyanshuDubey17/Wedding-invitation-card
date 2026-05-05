@@ -1,9 +1,10 @@
 import { Instagram, Share2 } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { weddingData } from '../data/weddingData'
 
 export default function Hashtag() {
   const [ref, visible] = useScrollReveal()
-  const tag = '#AaravWedsSiya'
+  const tag = weddingData.wedding.hashtag
 
   return (
     <section id="hashtag" className="py-16 sm:py-20 px-4 bg-ivory relative overflow-hidden">

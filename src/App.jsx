@@ -1,7 +1,7 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
 import LoadingScreen from './components/LoadingScreen'
-import Navbar from './components/Navbar'
+import DashboardNav from './components/DashboardNav'
 import Hero from './components/Hero'
-import SectionDivider from './components/SectionDivider'
 import CoupleIntro from './components/CoupleIntro'
 import StoryTimeline from './components/StoryTimeline'
 import Events from './components/Events'
@@ -23,34 +23,25 @@ export default function App() {
   return (
     <>
       <LoadingScreen />
-      <Navbar />
+      <DashboardNav />
       <main>
-        <Hero />
-        <SectionDivider />
-        <CoupleIntro />
-        <SectionDivider variant="minimal" />
-        <StoryTimeline />
-        <SectionDivider />
-        <Events />
-        <SectionDivider variant="minimal" />
-        <Schedule />
-        <SectionDivider />
-        <Venue />
-        <SectionDivider variant="minimal" />
-        <RSVP />
-        <SectionDivider />
-        <Gallery />
-        <SectionDivider variant="minimal" />
-        <Family />
-        <SectionDivider variant="minimal" />
-        <DressCode />
-        <SectionDivider />
-        <Gifts />
-        <Hashtag />
-        <SectionDivider variant="minimal" />
-        <FAQ />
-        <SectionDivider variant="minimal" />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/couple" element={<CoupleIntro />} />
+          <Route path="/story" element={<StoryTimeline />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/venue" element={<Venue />} />
+          <Route path="/rsvp" element={<RSVP />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/family" element={<Family />} />
+          <Route path="/dress-code" element={<DressCode />} />
+          <Route path="/gifts" element={<Gifts />} />
+          <Route path="/hashtag" element={<Hashtag />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
       <Footer />
       <MusicToggle />

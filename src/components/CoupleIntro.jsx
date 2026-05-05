@@ -1,5 +1,6 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { Quote } from 'lucide-react'
+import { weddingData } from '../data/weddingData'
 
 export default function CoupleIntro() {
   const [refA, visA] = useScrollReveal()
@@ -26,21 +27,20 @@ export default function CoupleIntro() {
                 className="relative w-full h-full rounded-full border-4 border-white shadow-lg overflow-hidden bg-beige-warm"
                 style={{
                   backgroundImage:
-                    'url(https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop)',
+                    `url(${weddingData.couple.brideImage})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
                 role="img"
-                aria-label="Bride portrait placeholder"
+                aria-label={`${weddingData.couple.brideRole} portrait`}
               />
               <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-maroon text-ivory text-xs uppercase tracking-wider px-4 py-1 rounded-full">
-                Bride
+                {weddingData.couple.brideRole}
               </div>
             </div>
-            <h3 className="font-display text-3xl text-maroon mb-2">Siya</h3>
+            <h3 className="font-display text-3xl text-maroon mb-2">{weddingData.couple.brideName}</h3>
             <p className="text-maroon/70 leading-relaxed text-sm sm:text-base">
-              Believes in chai, poetry, and slow Sundays. Finds joy in little rituals and big dreams — and in Aarav&apos;s
-              terrible puns that still make her laugh.
+              {weddingData.couple.brideBio}
             </p>
           </article>
 
@@ -56,21 +56,20 @@ export default function CoupleIntro() {
                 className="relative w-full h-full rounded-full border-4 border-white shadow-lg overflow-hidden bg-beige-warm"
                 style={{
                   backgroundImage:
-                    'url(https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop)',
+                    `url(${weddingData.couple.groomImage})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
                 role="img"
-                aria-label="Groom portrait placeholder"
+                aria-label={`${weddingData.couple.groomRole} portrait`}
               />
               <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-maroon text-ivory text-xs uppercase tracking-wider px-4 py-1 rounded-full">
-                Groom
+                {weddingData.couple.groomRole}
               </div>
             </div>
-            <h3 className="font-display text-3xl text-maroon mb-2">Aarav</h3>
+            <h3 className="font-display text-3xl text-maroon mb-2">{weddingData.couple.groomName}</h3>
             <p className="text-maroon/70 leading-relaxed text-sm sm:text-base">
-              A Lucknow boy with a passport full of stamps and a heart full of home. Known for surprise flowers,
-              dependable hugs, and never letting Siya win at board games — except when it matters.
+              {weddingData.couple.groomBio}
             </p>
           </article>
         </div>

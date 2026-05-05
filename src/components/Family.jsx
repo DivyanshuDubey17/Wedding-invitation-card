@@ -1,7 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
-
-const brideSide = ['Mr. & Mrs. Rajesh Sharma', 'With love from the Sharma & Kapoor families']
-const groomSide = ['Mr. & Mrs. Vikram Verma', 'With blessings from the Verma & Agarwal families']
+import { weddingData } from '../data/weddingData'
 
 export default function Family() {
   const [ref, visible] = useScrollReveal()
@@ -23,13 +21,13 @@ export default function Family() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <div className="glass-card rounded-3xl p-8 sm:p-10 border border-white/70">
             <p className="text-xs uppercase tracking-[0.25em] text-blush mb-4">Bride&apos;s family</p>
-            <p className="font-display text-2xl sm:text-3xl text-maroon mb-4">{brideSide[0]}</p>
-            <p className="text-maroon/65 text-sm leading-relaxed">{brideSide[1]}</p>
+            <p className="font-display text-2xl sm:text-3xl text-maroon mb-4">{weddingData.families.brideSide[0]}</p>
+            <p className="text-maroon/65 text-sm leading-relaxed">{weddingData.families.brideSide[1]}</p>
           </div>
           <div className="glass-card rounded-3xl p-8 sm:p-10 border border-white/70">
             <p className="text-xs uppercase tracking-[0.25em] text-champagne mb-4">Groom&apos;s family</p>
-            <p className="font-display text-2xl sm:text-3xl text-maroon mb-4">{groomSide[0]}</p>
-            <p className="text-maroon/65 text-sm leading-relaxed">{groomSide[1]}</p>
+            <p className="font-display text-2xl sm:text-3xl text-maroon mb-4">{weddingData.families.groomSide[0]}</p>
+            <p className="text-maroon/65 text-sm leading-relaxed">{weddingData.families.groomSide[1]}</p>
           </div>
         </div>
       </div>

@@ -1,23 +1,6 @@
 import { MapPin, Navigation, Train, Car } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-
-const venues = [
-  {
-    name: 'Heritage Lawns — Wedding Ceremony',
-    address: 'Plot 42, Amar Shaheed Path, Near SGPGI, Lucknow, Uttar Pradesh 226014',
-    mapQuery: 'Heritage+Lawns+Lucknow',
-  },
-  {
-    name: 'Imperial Banquets — Reception',
-    address: '4th Floor, Janpath Market, Hazratganj, Lucknow, Uttar Pradesh 226001',
-    mapQuery: 'Imperial+Banquets+Hazratganj+Lucknow',
-  },
-  {
-    name: 'Renaissance Lucknow — Sangeet',
-    address: 'Vipin Khand, Gomti Nagar, Lucknow, Uttar Pradesh 226010',
-    mapQuery: 'Renaissance+Hotel+Lucknow',
-  },
-]
+import { weddingData } from '../data/weddingData'
 
 function VenueCard({ v }) {
   const [ref, visible] = useScrollReveal()
@@ -60,7 +43,7 @@ export default function Venue() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-10">
-          {venues.map((v) => (
+          {weddingData.venues.map((v) => (
             <VenueCard key={v.name} v={v} />
           ))}
         </div>

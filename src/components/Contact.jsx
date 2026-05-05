@@ -1,11 +1,6 @@
 import { Phone, User } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-
-const contacts = [
-  { name: 'Priya Sharma', role: 'Bride’s sister & coordinator', phone: '+91 98765 43210' },
-  { name: 'Rohan Verma', role: 'Groom’s brother & logistics', phone: '+91 98765 12345' },
-  { name: 'Ananya Events', role: 'Wedding planner on-site', phone: '+91 91234 56789' },
-]
+import { weddingData } from '../data/weddingData'
 
 export default function Contact() {
   const [ref, visible] = useScrollReveal()
@@ -28,7 +23,7 @@ export default function Contact() {
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6">
-          {contacts.map((c) => (
+          {weddingData.contacts.map((c) => (
             <a
               key={c.phone}
               href={`tel:${c.phone.replace(/\s/g, '')}`}

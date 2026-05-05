@@ -1,5 +1,6 @@
 import { Gift, Heart } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { weddingData } from '../data/weddingData'
 
 export default function Gifts() {
   const [ref, visible] = useScrollReveal()
@@ -31,7 +32,9 @@ export default function Gifts() {
                 We&apos;re setting up a small registry for those who&apos;d like a gentle nudge — link to be shared via
                 family.
               </p>
-              <span className="text-xs uppercase tracking-wider text-champagne">Placeholder: yourregistry.com/aarav-siya</span>
+              <span className="text-xs uppercase tracking-wider text-champagne">
+                Registry: {weddingData.gift.registryLabel}
+              </span>
             </div>
           </div>
           <div className="glass-card rounded-2xl p-6 border border-white/70 flex gap-4">

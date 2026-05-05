@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X, Heart } from 'lucide-react'
+import { weddingData } from '../data/weddingData'
 
 const links = [
   { href: '#couple', label: 'Couple' },
@@ -39,7 +40,7 @@ export default function Navbar() {
         >
           <Heart className="w-5 h-5 text-blush fill-blush-soft group-hover:scale-110 transition-transform" />
           <span className="hidden sm:inline">
-            Aarav <span className="text-champagne">&amp;</span> Siya
+            {weddingData.couple.groomName} <span className="text-champagne">&amp;</span> {weddingData.couple.brideName}
           </span>
         </a>
 

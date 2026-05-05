@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
+import { weddingData } from '../data/weddingData'
 
-const WEDDING = new Date('2026-12-12T16:00:00+05:30')
+const WEDDING = new Date(weddingData.wedding.countdownISO)
 
 function pad(n) {
   return String(n).padStart(2, '0')

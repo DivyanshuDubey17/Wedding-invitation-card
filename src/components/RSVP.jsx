@@ -3,6 +3,7 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import { CheckCircle2, Send, AlertCircle } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { db, isFirestoreReady } from '../firebase'
+import { weddingData } from '../data/weddingData'
 
 const eventOptions = ['Engagement', 'Haldi', 'Mehendi', 'Sangeet', 'Wedding Ceremony', 'Reception']
 
@@ -134,7 +135,9 @@ export default function RSVP() {
       >
         <div className="text-center mb-12">
           <p className="text-champagne uppercase tracking-[0.3em] text-sm mb-3">RSVP</p>
-          <h2 className="font-display text-4xl sm:text-5xl text-maroon italic">Kindly respond by 1 November 2026</h2>
+          <h2 className="font-display text-4xl sm:text-5xl text-maroon italic">
+            Kindly respond by {weddingData.wedding.rsvpBy}
+          </h2>
           <div className="mt-4 max-w-xl mx-auto space-y-2">
             {isFirestoreReady() ? (
               <p className="text-sm text-center rounded-xl bg-emerald-50 border border-emerald-200/80 text-emerald-900 px-4 py-3 leading-relaxed">

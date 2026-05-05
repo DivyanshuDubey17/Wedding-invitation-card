@@ -1,36 +1,12 @@
 import { Coffee, Plane, Gem, Mail } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { weddingData } from '../data/weddingData'
 
-const milestones = [
-  {
-    icon: Coffee,
-    title: 'First meeting',
-    date: 'Monsoon 2019',
-    text: 'A chance introduction over filter coffee and laughter at a friend’s gathering in Lucknow — the kind of evening neither of us wanted to end.',
-  },
-  {
-    icon: Plane,
-    title: 'First trip together',
-    date: 'Winter 2021',
-    text: 'Udaipur’s palaces and lake reflections mirrored what we already felt — that adventure is sweeter when shared.',
-  },
-  {
-    icon: Gem,
-    title: 'The proposal',
-    date: 'Spring 2025',
-    text: 'Under a sky full of fairy lights, with families hiding behind curtains and hearts in throats — she said yes.',
-  },
-  {
-    icon: Mail,
-    title: 'Wedding announcement',
-    date: '2026',
-    text: 'With our parents’ blessings and your love, we invite you to celebrate as two families become one.',
-  },
-]
+const iconByIndex = [Coffee, Plane, Gem, Mail]
 
 function TimelineItem({ item, index }) {
   const [ref, visible] = useScrollReveal()
-  const Icon = item.icon
+  const Icon = iconByIndex[index % iconByIndex.length]
   const isLeft = index % 2 === 0
 
   return (
@@ -83,7 +59,7 @@ export default function StoryTimeline() {
         <div className="relative">
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-champagne/0 via-champagne/50 to-champagne/0 hidden md:block -translate-x-1/2" />
           <div className="flex flex-col gap-12 md:gap-16">
-            {milestones.map((m, i) => (
+            {weddingData.story.map((m, i) => (
               <TimelineItem key={m.title} item={m} index={i} />
             ))}
           </div>

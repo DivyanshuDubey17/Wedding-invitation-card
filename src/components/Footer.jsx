@@ -1,4 +1,5 @@
 import { Heart } from 'lucide-react'
+import { weddingData } from '../data/weddingData'
 
 export default function Footer() {
   return (
@@ -8,13 +9,19 @@ export default function Footer() {
         <div className="flex justify-center mb-4">
           <Heart className="w-8 h-8 text-blush fill-blush/30" />
         </div>
-        <p className="font-display text-3xl sm:text-4xl italic text-ivory mb-2">Aarav &amp; Siya</p>
-        <p className="text-champagne-light/90 text-sm tracking-widest uppercase mb-6">12 December 2026 · Lucknow</p>
+        <p className="font-display text-3xl sm:text-4xl italic text-ivory mb-2">
+          {weddingData.couple.groomName} &amp; {weddingData.couple.brideName}
+        </p>
+        <p className="text-champagne-light/90 text-sm tracking-widest uppercase mb-6">
+          {weddingData.wedding.dateLabel} · {weddingData.wedding.city}
+        </p>
         <p className="text-ivory/75 text-sm leading-relaxed mb-8">
           From the bottom of our hearts — thank you for being part of our story. We can’t wait to hug you, feed you, and
           dance with you.
         </p>
-        <p className="text-ivory/45 text-xs tracking-[0.2em] uppercase">Made with love · Aarav &amp; Siya</p>
+        <p className="text-ivory/45 text-xs tracking-[0.2em] uppercase">
+          Made with love · {weddingData.couple.groomName} &amp; {weddingData.couple.brideName}
+        </p>
       </div>
     </footer>
   )
