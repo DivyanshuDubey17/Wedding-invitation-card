@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Menu, X, Heart } from 'lucide-react'
-import { weddingData } from '../data/weddingData'
+import { useCouple } from '../hooks/useCouple'
 
 const links = [
   { href: '#couple', label: 'Couple' },
-  { href: '#story', label: 'Our Story' },
   { href: '#events', label: 'Events' },
   { href: '#schedule', label: 'Schedule' },
   { href: '#venue', label: 'Venue' },
@@ -15,6 +14,7 @@ const links = [
 ]
 
 export default function Navbar() {
+  const { couple } = useCouple()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -40,7 +40,7 @@ export default function Navbar() {
         >
           <Heart className="w-5 h-5 text-blush fill-blush-soft group-hover:scale-110 transition-transform" />
           <span className="hidden sm:inline">
-            {weddingData.couple.groomName} <span className="text-champagne">&amp;</span> {weddingData.couple.brideName}
+            {couple.groomName} <span className="text-champagne">&amp;</span> {couple.brideName}
           </span>
         </a>
 

@@ -1,7 +1,9 @@
 import { Heart } from 'lucide-react'
+import { useCouple } from '../hooks/useCouple'
 import { weddingData } from '../data/weddingData'
 
 export default function Footer() {
+  const { couple } = useCouple()
   return (
     <footer className="relative py-14 px-4 bg-maroon-deep text-ivory overflow-hidden">
       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_50%_0%,#5C1A1B,transparent_60%)]" />
@@ -10,7 +12,7 @@ export default function Footer() {
           <Heart className="w-8 h-8 text-blush fill-blush/30" />
         </div>
         <p className="font-display text-3xl sm:text-4xl italic text-ivory mb-2">
-          {weddingData.couple.groomName} &amp; {weddingData.couple.brideName}
+          {couple.groomName} &amp; {couple.brideName}
         </p>
         <p className="text-champagne-light/90 text-sm tracking-widest uppercase mb-6">
           {weddingData.wedding.dateLabel} · {weddingData.wedding.city}
@@ -20,7 +22,7 @@ export default function Footer() {
           dance with you.
         </p>
         <p className="text-ivory/45 text-xs tracking-[0.2em] uppercase">
-          Made with love · {weddingData.couple.groomName} &amp; {weddingData.couple.brideName}
+          Made with love · {couple.groomName} &amp; {couple.brideName}
         </p>
       </div>
     </footer>

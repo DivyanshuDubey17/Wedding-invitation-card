@@ -3,7 +3,6 @@ import LoadingScreen from './components/LoadingScreen'
 import DashboardNav from './components/DashboardNav'
 import Hero from './components/Hero'
 import CoupleIntro from './components/CoupleIntro'
-import StoryTimeline from './components/StoryTimeline'
 import Events from './components/Events'
 import Schedule from './components/Schedule'
 import Venue from './components/Venue'
@@ -13,7 +12,6 @@ import Family from './components/Family'
 import DressCode from './components/DressCode'
 import Gifts from './components/Gifts'
 import MusicToggle from './components/MusicToggle'
-import Hashtag from './components/Hashtag'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -28,7 +26,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/couple" element={<CoupleIntro />} />
-          <Route path="/story" element={<StoryTimeline />} />
           <Route path="/events" element={<Events />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/venue" element={<Venue />} />
@@ -37,7 +34,6 @@ export default function App() {
           <Route path="/family" element={<Family />} />
           <Route path="/dress-code" element={<DressCode />} />
           <Route path="/gifts" element={<Gifts />} />
-          <Route path="/hashtag" element={<Hashtag />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />

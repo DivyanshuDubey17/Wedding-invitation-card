@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { weddingData } from '../data/weddingData'
+import { useCouple } from '../hooks/useCouple'
 
 export default function LoadingScreen() {
+  const { couple } = useCouple()
   const [done, setDone] = useState(false)
   const [hide, setHide] = useState(false)
 
@@ -28,7 +29,7 @@ export default function LoadingScreen() {
           With love
         </p>
         <h1 className="font-display text-4xl sm:text-5xl text-ivory italic mb-2">
-          {weddingData.couple.groomName} &amp; {weddingData.couple.brideName}
+          {couple.groomName} &amp; {couple.brideName}
         </h1>
         <div className="mx-auto mt-8 h-0.5 w-24 bg-gradient-to-r from-transparent via-champagne to-transparent rounded-full overflow-hidden">
           <div

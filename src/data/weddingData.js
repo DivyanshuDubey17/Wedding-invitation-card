@@ -17,7 +17,6 @@ export const weddingData = {
     dateLabel: 'Friday, 12 December 2026',
     countdownISO: '2026-12-12T16:00:00+05:30',
     rsvpBy: '1 November 2026',
-    hashtag: '#PankajWedsSiya',
   },
   events: [
     {
@@ -100,17 +99,7 @@ export const weddingData = {
       { time: '4:45 PM', title: 'Wedding ceremony begins', note: 'Mandap' },
     ],
   },
-  gallery: [
-    { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80', alt: 'Couple moment' },
-    { src: 'https://images.unsplash.com/photo-1606800052052-a09a67037101?w=800&q=80', alt: 'Wedding details' },
-    { src: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80', alt: 'Celebration' },
-  ],
-  story: [
-    { title: 'First meeting', date: 'Monsoon 2019', text: 'A chance introduction over coffee in Lucknow.' },
-    { title: 'First trip together', date: 'Winter 2021', text: 'Shared adventures that deepened our bond.' },
-    { title: 'The proposal', date: 'Spring 2025', text: 'A heartfelt yes under fairy lights.' },
-    { title: 'Wedding announcement', date: '2026', text: 'With blessings, we invite you to celebrate with us.' },
-  ],
+ 
   faq: [
     {
       q: 'What is the dress code?',

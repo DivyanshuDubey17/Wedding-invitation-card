@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 const links = [
   { to: '/', label: 'Home' },
   { to: '/couple', label: 'Couple' },
-  { to: '/story', label: 'Story' },
   { to: '/events', label: 'Events' },
   { to: '/schedule', label: 'Schedule' },
   { to: '/venue', label: 'Venue' },
@@ -12,7 +11,6 @@ const links = [
   { to: '/family', label: 'Family' },
   { to: '/dress-code', label: 'Dress Code' },
   { to: '/gifts', label: 'Gifts' },
-  { to: '/hashtag', label: 'Hashtag' },
   { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
 ]
